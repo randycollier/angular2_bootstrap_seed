@@ -14,7 +14,9 @@ var config = {
     bootstrapDir: './node_modules/bootstrap-sass',
     publicDir: './public',
     source: './app',//need to change 
-    dest: './app'
+    dest: './app',
+    fontIn: ['./node_modules/bootstrap-sass/assets/fonts/**/*'],
+    fontOut: './app/fonts'
 };
 
 
@@ -54,13 +56,15 @@ gulp.task("installTypings",function(){
 
 
 
-gulp.task('watch-app-sass',function(){
-  return gulp.watch('./app/sass/**/*.scss',['app-sass']);
 
-});
 
-gulp.task('app-sass',['fonts','icons'],function(){
-  return gulp.src('./app/sass/**/app.scss')
+
+gulp.task('build-style', ['icons','fonts','app-sass']);
+// fonts
+
+
+gulp.task('app-sass',function(){
+  return gulp.src('./app/sass/**/*.scss')
     .pipe(
       sass(
         {
@@ -72,42 +76,24 @@ gulp.task('app-sass',['fonts','icons'],function(){
 });
 
 
-// fonts
-var fonts = {
-        in: [config.bootstrapDir + 'assets/fonts/**/*'],
-        out: config.dest + '/fonts'
-    };
+gulp.task('watch-app-sass',function(){
+  return gulp.watch('./app/sass/**/*.scss',['app-sass']);
+});
+
+
+
 
 gulp.task('icons', function() { 
     return gulp.src('./node_modules/bootstrap-sass/assets/fonts/**/*') 
         .pipe(gulp.dest('./app/fonts')); 
 });
+
 gulp.task('fonts', function() { 
     return gulp.src('./fonts/**/*') 
         .pipe(gulp.dest('./app/fonts')); 
 });
 
-// gulp.task('app-sass', function () {
-//   return sass('./app/sass/**/app.scss', {
-//       precision: 6,
-//       stopOnError: true,
-//       cacheLocation: './',
-//      inludePaths:[config.bootstrapDir + '/assets/stylesheets' ]
-//     })
-//     .on('error', sass.logError)
-//     .pipe(gulp.dest('./app/css'));
-// });
 
-
-
-gulp.task('insertjs', function () {
-  gulp.src('./index.html') 
-  .pipe(insertLines({
-      'before': /<\/body>/,
-      'lineBefore': '<script src="https://gwisystems.gwii.net/js/testcommon_html5.js"></script>'
-    }))
-  .pipe(gulp.dest('./app'));
-});
 
 
 gulp.task('watch', function(){
@@ -120,9 +106,7 @@ gulp.task('serve',function(){
 })
 
 gulp.task('build', ['compile']);
-gulp.task('watchsass', ['watch-app-sass']);
-gulp.task('sass', ['app-sass']);
-gulp.task('default', ['fonts','icons','watch-app-sass','build','insertjs','serve','watch']);
+gulp.task('default', ['build','build-style','serve','watch','watch-app-sass']);
 
 
 
