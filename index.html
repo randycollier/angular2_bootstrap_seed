@@ -9,7 +9,8 @@
     <!-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <link rel='stylesheet' href='app/css/app.css'>
     <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    
 
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
@@ -27,16 +28,12 @@
    <script>
     System.import('./node_modules/moment/moment.js'); 
       System.config({
-        bundles:{
-
-        },
-
         paths: {
           'underscore': 'node_modules/underscore/underscore.js',
           'moment': 'node_modules/moment/moment.js'
           
           },
-          // map:{'moment': 'node_modules/moment/moment.js'},
+           // map:{'bootstrap': 'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'},
         packages: {
           app: {
             format: 'register',
