@@ -1,0 +1,36 @@
+
+
+<div class="row panel panel-horizontal">
+        <div class="col-xs-3">
+            <div class="panel-heading text-center">
+              <div class="votes">
+                {{ article.votes }}
+              </div>
+              <div class="label">
+                Points
+              </div>
+            </div>
+        </div>
+        <div class="col-xs-9 panel-body white">
+          <a class="ui large header" href="{{ article.link }}">
+          {{ article.title }}
+          </a>
+          <div class='small-text'>
+            <a href (click)='changeVote()'>
+              ({{article.link}})
+            </a>
+          </div>
+          <ul class="ui big horizontal list voters">
+            <li class="item">
+              <a href (click)="voteUp()">
+                <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span><span>upvote</span>
+                </a>
+            </li>
+            <li class="item"> 
+              <a href (click)="voteDown()">
+                <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span><span>downvote</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>

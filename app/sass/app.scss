@@ -1,0 +1,42 @@
+@import 'project';
+@import 'bootstrap';
+
+$mod_prime:#465946;
+$mod_sec:#8E2208;
+$mod_thrd:#A49022;
+$mod_fourth:#BEAD92; 
+$mod_fith:#D95C14;
+$mod_lightgray:lightgray;
+html, body{
+	background-color: $mod_lightgray ;
+}
+
+.list{
+	list-style:none;
+	morgin:0;
+	padding:0;
+}
+.votes {
+  font-size:4rem;
+ }
+
+product-item {
+	display:block;
+}
+.product-thumb img{
+	height:50px;
+}
+.selected > .panel-body {
+	border:solid 1px $mod_sec;
+}
+.panel-horizontal {
+    background-color: darkgray;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.panel-horizontal > .panel-body {
+    background-color: white;
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #ddd;
+}
