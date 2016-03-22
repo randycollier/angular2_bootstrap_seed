@@ -1,0 +1,18 @@
+
+<div class='container'>
+	<nav class=' topbar navbar-fixed-top'>
+		<ul class="nav navbar-nav">
+			<li [class.active]="getLinkStyle('Home')"><a [routerLink]="['Home']" >Home</a></li>
+			<li [class.active]="getLinkStyle('Reddit')" ><a [routerLink]="['Reddit']">Reddit</a></li> 
+			<li [class.active]="getLinkStyle('Inventory')" ><a [routerLink]="['Inventory']">Inventory</a></li> 
+			<li [class.active]="getLinkStyle('FormsChapter')" ><a [routerLink]="['FormsChapter']">FormsChapter</a></li> 
+			<li [class.active]="getLinkStyle('ChatChapter')"><a [routerLink]="['ChatChapter']">ChatChapter</a></li> 
+		</ul>
+	</nav>
+</div>
+<br>
+<div class='container'>
+
+<router-outlet class='row'></router-outlet>
+</div>
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>

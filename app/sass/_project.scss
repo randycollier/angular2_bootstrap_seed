@@ -1,0 +1,86 @@
+$mod_prime:#465946;
+$mod_sec:#8E2208;
+$mod_thrd:#A49022;
+$mod_fourth:#BEAD92; 
+$mod_fith:#D95C14;
+$mod_lightgray:lightgray;
+
+
+
+@font-face {
+  font-family: 'benchninebold';
+  src: url("../fonts/benchnine-bold-BenchNine.eot");
+  src: url("../fonts/benchnine-bold-BenchNine.eot?#iefix") 
+  format("embedded-opentype"), url("../fonts/benchnine-bold-BenchNine.woff2") 
+  format("woff2"), url("../fonts/benchnine-bold-BenchNine.woff") format("woff"); }
+
+
+@font-face {
+    font-family: 'benchninelight';
+    src: url('../fonts/benchnine-light-BenchNine.eot');
+    src: url('../fonts/benchnine-light-BenchNine.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/benchnine-light-BenchNine.woff2') format('woff2'),
+         url('../fonts/benchnine-light-BenchNine.woff') format('woff'),
+         url('../fonts/benchnine-light-BenchNine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+    font-family: 'benchninelight' !important;
+
+}
+
+
+container-fluid{
+	padding:0;
+
+}
+.table{
+	display:table;
+}
+.table-row{
+	display:table-row;
+}
+.table-cell{
+	display:table-cell;
+}
+
+
+
+
+
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+

@@ -9,6 +9,7 @@ import {Component} from 'angular2/core';
 export class HomeComponent {
 	title: string;
 	constructor(){
+
 		this.title='It is ?? ';
 	}
 }
